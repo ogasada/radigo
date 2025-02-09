@@ -1,0 +1,12 @@
+name: Build and Push Docker Image
+
+on:
+  workflow_dispatch:
+
+jobs:
+  call-reusable-workflow:
+    uses: ./.github/workflows/reusable-build-and-push-docker-image.yml
+    with:
+      version_file_path: ./version
+      working_dir_path: .
+      registry: ghcr.io
