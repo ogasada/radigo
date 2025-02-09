@@ -3,7 +3,7 @@ FROM golang:1.14-alpine AS build
 LABEL maintainer="yyoshiki41@gmail.com"
 
 # Set timezone
-ENV TZ "Asia/Tokyo"
+ENV TZ="Asia/Tokyo"
 
 # Install tools required to build the project
 RUN apk add --no-cache ca-certificates \
@@ -28,7 +28,7 @@ RUN make build-4-docker
 FROM alpine:latest
 
 # Set timezone
-ENV TZ "Asia/Tokyo"
+ENV TZ="Asia/Tokyo"
 # Set default output dir
 VOLUME ["/output"]
 
